@@ -4,8 +4,14 @@ server:
 spring:
   application:
     name: inventory-service
-  #TODO: add configs for config server
-
+  cloud:
+    config:
+      discovery:
+        service-id: config-server
+        enabled: true
+      enabled: true
+      fail-fast: true
+      profile: dev
 eureka:
   instance:
     prefer-ip-address: true
